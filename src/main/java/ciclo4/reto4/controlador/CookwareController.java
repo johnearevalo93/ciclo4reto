@@ -18,9 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 import ciclo4.reto4.modelo.Cookware;
 import ciclo4.reto4.servicio.CookwareService;
 
+
+import org.springframework.web.bind.annotation.*;
+
 @RestController
 @RequestMapping("/api/cookware")
-@CrossOrigin("*")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET,
+        RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 public class CookwareController {
     @Autowired
     private CookwareService accessoryService;
